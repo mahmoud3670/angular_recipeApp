@@ -8,17 +8,14 @@ import { ShoppingListService } from '../Services/shopping-list.service';
   styleUrl: './shopping-list.component.css',
 })
 export class ShoppingListComponent implements OnInit {
-  // ingrenidents: Ingredients[] = [
-  //   new Ingredients('Apple', 5),
-  //   new Ingredients('mango', 10),
-  // ];
   ingrenidents: Ingredients[] = [];
   constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit(): void {
     this.ingrenidents = this.shoppingListService.getIngredients();
   }
-  // onIngredientAdded(ingredient: Ingredients) {
-  //   this.shoppingListService.addIngredient(ingredient);
-  // }
+
+  onEditItem(index: number) {
+    this.shoppingListService.startedEditing.next(index);
+  }
 }

@@ -14,7 +14,8 @@
       <a
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let ingrenident of ingrenidents"
+        (click)="onEditItem(i)"
+        *ngFor="let ingrenident of ingrenidents; let i = index"
       >
         {{ ingrenident.name }} - ({{ ingrenident.amount }})
       </a>
