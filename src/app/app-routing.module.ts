@@ -9,7 +9,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   {
-    path: 'resipes',
+    path: 'recipes',
     component: RecipesComponent,
     children: [
       { path: '', component: RecipeStartComponent },
